@@ -33,10 +33,6 @@ body {
 
 }
 
-.content {
-    grid-area: content;
-}
-
 
 
 .sidepanel > div{
@@ -75,9 +71,6 @@ body {
 .navwrapper {
     grid-area: navigation;
     background-color: grey;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
 }
 
 [alt*='picture'] {
@@ -89,26 +82,226 @@ body {
 .navwrapper {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     align-content: center;
+    padding-left: 45px;
+    min-width: 500px;
+    background-color: #ffffff;
+    font-size: 1.5rem;
 }
 
 .top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column: 1 / -1 ;
 }
 
 [type*='search'] {
-    width: 50%;
+    width: clamp(250px, 75%, 900px);
     height: 36px;
-    border-radius: 10px;
-    border: 0;
+    border-radius: 16px;
+    border: 2px solid black;
+    background-color: azure;
 }
 
 .search {
-   display: flex;
-   align-items: center;
+    display: flex;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: -2;
+    gap: 20px;
 }
 
+.bottom {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+
+.bottomleft {
+    display: flex;
+    gap: 25px;
+}
+
+.navwrapper .buttons {
+    grid-column: 3 / -1;
+    justify-self: center;
+}
+
+.navwrapper button {
+    background-color: #1876db;
+    border: 0;
+    border-radius: 16px;
+    padding: 5px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 0;
+}
+
+
+
+.name2 {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.bottom  img {
+    height: 60px;
+    width: 60px;
+}
+
+.buttons {
+    display: flex;
+    gap: 25px;
+    
+}
+
+.search img {
+    height: 30px;
+    width: 30px;
+}
+
+.profile img:nth-of-type(2) {
+    height: 50px;
+    width: 50px;
+}
+
+.profile img:nth-child(1) {
+    height: 40px;
+    width: 40px;
+}
+
+.profile :nth-child(3) {
+    font-size: 30px;
+}
+
+.content {
+    display: grid;
+    grid-area: content;
+    background-color: #b6bac2;
+    box-shadow: 0px 7px 25px 0px rgba(38,38,38,0.75) inset;
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    'projects info';
+    gap: 20px;
+    padding-top: 30px;
+    padding-right: 35px;
+    padding-left: 15px;
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.contentinfo {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.announcments {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.divider {
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+.announcmentcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+}
+
+.announcments h5 {
+    color: black;
+    font-size: 1.3rem;
+    padding-bottom: 10px;
+}
+
+.announcments p {
+    color: rgb(71, 71, 71);
+}
+
+.contentinfo h3 {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.trenditem {
+    display: flex;
+    gap: 20px;
+}
+
+.trendingcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.trenditem h6 {
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+}
+
+.trending {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.projects > p {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.projectcontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    place-content: center;
+    gap: 30px;
+    padding-top: 40px;
+    grid-auto-rows: 250px;
+}
+
+.projectcard {
+    background-color: white;
+    padding: 2rem;
+    border-left: 10px #f0c332 solid;
+    border-radius: 12px;
+    max-width: 350px;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding-bottom: 15px;
+}
+
+.text {
+    min-width: 22ch;
+    max-width: 40ch;
+}
 
