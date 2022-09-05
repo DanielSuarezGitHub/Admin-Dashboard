@@ -292,6 +292,9 @@ body {
     border-left: 10px #f0c332 solid;
     border-radius: 12px;
     max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .title {
@@ -305,3 +308,7 @@ body {
     max-width: 40ch;
 }
 
+.projectcard .buttons {
+    margin-top: auto;
+    align-self: flex-end;
+}
